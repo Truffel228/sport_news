@@ -14,14 +14,13 @@ class MatchModel {
   final DateTime time;
   final String league;
 
-  factory MatchModel.fromJson(Map<String, dynamic> json) =>
-      MatchModel(
+  factory MatchModel.fromJson(Map<String, dynamic> json) => MatchModel(
         homeTeamTitle: json['teams']['home']['name'],
         homeTeamLogo: json['teams']['home']['logo'],
         awayTeamTitle: json['teams']['away']['name'],
         awayTeamLogo: json['teams']['away']['logo'],
         time: DateTime.fromMillisecondsSinceEpoch(
-          json['timestamp'] * 1000,
+          json['timestamp'] ?? 0 * 1000,
         ),
         league: json['league']['name'],
       );

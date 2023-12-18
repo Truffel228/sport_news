@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 class FootballDatasource {
   final String apiKey = 'e0fbe3beaaed6d5b1321d8a9cbeaf93a';
   final String apiHost = 'v3.football.api-sports.io';
-  final String endpoint = 'games';
+  final String endpoint = 'fixtures';
 
   Future<List<MatchModel>> matches() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
